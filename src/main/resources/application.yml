@@ -1,0 +1,25 @@
+server:
+  port: 8090
+  error:
+    path: /WEB-INF/pages/error/error.jsp
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/pfm
+    username: root
+    password:
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp
+      
+  http:
+    encoding:
+      force: true
+mybatis:
+  type-aliases-package: com.yul.pojo
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mappers/*.xml
